@@ -1,38 +1,10 @@
-<%-- 
-    Document   : index
-    Created on : 6 jun 2024, 7:18:27
-    Author     : Docente
---%>
-
-<%@ page contentType="text/html;charset=UTF-8" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
-<%@ page session="true" %>
-<%
-    response.setHeader("Pragma", "no-cache");
-    response.addHeader("Cache-Control", "must-revalidate");
-    response.addHeader("Cache-Control", "no-cache");
-    response.addHeader("Cache-Control", "no-store");
-    response.setDateHeader("Expires", 0);
-    String user = "";
-    HttpSession sesion = request.getSession();
-    if (sesion.getAttribute("username") == null) {
-%>
-<jsp:forward page="login.jsp">
-    <jsp:param name="error" value="Ud. debe autenticarse...!"/>
-</jsp:forward>
-<%
-} else {
-    user = (String) sesion.getAttribute("username");
-%>
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Solicitud</title>
-    <link rel="stylesheet" href="assets/jss/styles.css">
+    <link rel="stylesheet" href="jss/styles.css">
 </head>
 <body>
     <div class="sidebar" id="sidebar">
@@ -41,13 +13,13 @@
         </div>
         <nav>
             <ul>
-                <li><a href="assets/practicas.html">Prácticas Pre Profesionales</a></li>
-                <li><a href="assets/solicitudes.html">Solicitudes</a></li>
-                <li><a href="assets/estudiantes.html">Estudiantes</a></li> <!-- Actualizado -->
-                <li><a href="assets/carrera.html">Carrera</a></li>
-                <li><a href="assets/asignar.html">Asignar</a></li>
+                <li><a href="practicas.html">Prácticas Pre Profesionales</a></li>
+                <li><a href="solicitudes.html">Solicitudes</a></li>
+                <li><a href="estudiantes.html">Estudiantes</a></li>
+                <li><a href="carrera.html">Carrera</a></li>
+                <li><a href="asignar.html">Asignar</a></li>
                 <li><a href="">Configuración</a></li>
-                <li><a href="assets/index.html">Cerrar Sesión</a></li>
+                <li><a href="index.html">Cerrar Sesión</a></li>
             </ul>
             
         </nav>
@@ -58,7 +30,7 @@
             <h1>Solicitud</h1>
             <div class="user-info">
                 <span>Coordinador</span>
-                <img src="assets/images/user_varon.png" alt="User Icon">
+                <img src="images/user_varon.png" alt="User Icon">
             </div>
         </header>
         <section class="datos-estudiante">
@@ -113,4 +85,3 @@
     <script src="jss/scripts.js"></script>
 </body>
 </html>
-<%}%>

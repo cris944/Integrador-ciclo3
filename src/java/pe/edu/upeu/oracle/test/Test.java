@@ -32,7 +32,7 @@ static Gson g = new Gson();
         //System.out.println(rdao.deleteRol(21));
         //System.out.println(g.toJson(rdao.readRol(21)));
         //System.out.println(g.toJson(rdao.readAllRol()));
-        System.out.println(g.toJson(udao.login("dreyna", "1234567")));
+        System.out.println(g.toJson(udao.login("admin", "123")));
     }
     
 }
